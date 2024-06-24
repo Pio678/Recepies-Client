@@ -1,0 +1,171 @@
+header {
+  height: 15rem;
+  width: 100%;
+  background-color: #e4dede;
+  display: grid;
+  grid-template-columns: 7rem 1fr 12rem;
+  grid-template-rows: 10rem;
+  grid-template-areas:
+    "menu-button logo-area login-area"
+    "menu menu menu";
+
+  align-items: center;
+  padding: 2rem;
+
+  transition: height 0.5s;
+}
+
+header.menu-open {
+  height: 100%;
+  align-content: start;
+
+  transition: height 0.5s;
+}
+
+.logo-container {
+  min-width: 40rem;
+  grid-area: logo-area;
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
+  gap: 1rem;
+}
+
+.logo-img {
+  height: 7rem;
+}
+
+.logo-text {
+  color: #35261d;
+  font-size: 5rem;
+  font-family: "Pacifico", cursive;
+}
+
+nav {
+  grid-area: menu;
+  align-content: center;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serifs;
+  font-weight: 700;
+}
+
+.menu-button {
+  grid-area: menu-button;
+  border: none;
+  background-color: inherit;
+  height: 5rem;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 0;
+}
+
+.nav-menu.is-active {
+  padding: 2rem;
+  visibility: visible;
+  justify-content: start;
+  height: auto;
+  transition: 0.5s;
+}
+.menu-button {
+  visibility: visible;
+}
+.menu-icon {
+  height: 5rem;
+}
+
+.nav-list {
+  visibility: collapse;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  list-style: none;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.nav-menu.is-active .nav-list {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+  transition: 0.2s ease-in-out;
+}
+
+.nav-item {
+  font-style: normal;
+  font-size: 2.4rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-item > a:hover {
+  text-decoration: underline #fd874c;
+}
+.user-section {
+  grid-area: login-area;
+  justify-self: end;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.user-icon {
+  height: 5rem;
+  background-color: #fd874c;
+  border-radius: 2.5rem;
+  object-position: 50% 5px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0.2rem;
+}
+.login-button {
+  border-style: none;
+  background-color: inherit;
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.login-button:hover {
+  text-decoration: underline #fd874c;
+}
+
+@media (width>60rem) {
+  header,
+  header.menu-open {
+    height: auto;
+    align-content: center;
+    grid-template-columns: 40rem 1fr 12rem;
+    grid-template-areas:
+      "logo-area menu login-area"
+      "menu-button . .";
+    align-items: stretch;
+  }
+
+  .nav-menu {
+    justify-content: end;
+
+    position: static;
+    flex-direction: row;
+  }
+
+  .menu-button {
+    visibility: collapse;
+    height: 0;
+  }
+
+  .nav-list,
+  .nav-menu.is-active {
+    justify-content: end;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    visibility: visible;
+  }
+}
