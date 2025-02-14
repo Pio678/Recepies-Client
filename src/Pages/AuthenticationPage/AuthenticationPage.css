@@ -1,0 +1,173 @@
+main {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  display: none;
+}
+
+aside {
+  visibility: collapse;
+  height: 0%;
+}
+
+.side-img {
+  visibility: collapse;
+  width: 0;
+}
+
+#auth-page {
+  width: 100%;
+  height: 100%;
+}
+
+.login-container {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  align-items: center;
+  margin: auto;
+  width: 90%;
+}
+
+.logo {
+  width: 100%;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4rem;
+}
+
+.auth-form-description {
+  font-family: Roboto;
+  font-size: 1.8rem;
+}
+
+.auth-form-description > h1 {
+  font-weight: 600;
+}
+
+.auth-bottom-text {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.auth-bottom-link {
+  color: blue;
+  text-decoration: underline;
+  cursor: po;
+}
+
+.auth-input {
+  border: solid;
+  border-color: black;
+  border-width: 0.1rem;
+  border-radius: 1rem;
+}
+.auth-input:focus {
+  outline: none;
+  border-width: 0.2rem;
+}
+
+.auth-input.input-error {
+  border-color: red;
+  background-color: rgb(244, 171, 171);
+}
+
+.auth-button {
+  font-family: Roboto;
+}
+
+.auth-field-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.9rem;
+}
+
+.auth-field-container > input {
+  height: 4rem;
+  padding: 0 1rem 0 2rem;
+  margin-bottom: 1rem;
+}
+
+#auth-page .auth-button {
+  border: solid black;
+  padding: 1rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: var(--orange);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.02s;
+}
+
+#auth-page .auth-button:active {
+  transform: scale(0.99, 0.9);
+}
+
+#auth-page .auth-button:disabled {
+  opacity: 0.95;
+  transform: none;
+}
+
+.auth-form .bottom-text {
+  font-size: 2rem;
+}
+
+@media (min-width: 80rem) {
+  #auth-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
+
+    justify-items: stretch;
+    align-items: stretch;
+  }
+
+  header {
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  aside {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    visibility: visible;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .side-img {
+    visibility: visible;
+    width: 100%;
+  }
+
+  .login-container {
+    width: 70%;
+  }
+
+  .logo {
+    height: 0rem;
+  }
+  .auth-form-description {
+    font-size: 3.4rem;
+  }
+
+  .auth-form {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .auth-field-container {
+    font-size: 2.2rem;
+  }
+}

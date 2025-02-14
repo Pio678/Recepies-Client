@@ -1,13 +1,16 @@
 import "./Header.css";
 
-import pageLogo from "../../assets/logo4.png";
+import Logo from "../Logo/Logo";
 import blankUserIcon from "../../assets/icons/blankUserIcon.png";
 import closeMenuIcon from "../../assets/icons/cross-icon.png";
 import openMenuIcon from "../../assets/icons/hamburger.png";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   function openMenu() {
     setIsMenuOpen(true);
@@ -27,10 +30,7 @@ function Header() {
 
   return (
     <header className={isMenuOpen ? "menu-open" : ""}>
-      <div className="logo-container">
-        <img className="logo-img" src={pageLogo} />
-        <div className="logo-text">{`Easy Recepies`}</div>
-      </div>
+      <Logo />
 
       {toogleMenuButton}
 
@@ -56,8 +56,17 @@ function Header() {
         </div>
       </nav>
       <div className="user-section">
-        <img className="user-icon" src={blankUserIcon} />
-        <button className="login-button">log in</button>
+        <img
+          className="user-icon"
+          onClick={() => navigate("/auth/log-in")}
+          src={blankUserIcon}
+        />
+        <button
+          className="login-button"
+          onClick={() => navigate("/auth/log-in")}
+        >
+          log in
+        </button>
       </div>
     </header>
   );

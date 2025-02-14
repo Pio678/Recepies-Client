@@ -1,0 +1,50 @@
+/* .auth-button {
+  font-family: Roboto;
+}
+
+.auth-field-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  font-size: 1.9rem;
+}
+
+.auth-field-container > input {
+  height: 4rem;
+  padding: 0 1rem 0 1rem;
+}
+
+#auth-page .auth-button {
+  border: solid black;
+  padding: 1rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: var(--orange);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.02s;
+}
+
+#auth-page .auth-button:active {
+  transform: scale(0.99, 0.9);
+}
+
+.auth-form .bottom-text {
+  font-size: 2rem;
+}
+
+.login-error {
+  display: flex;
+  justify-items: center;
+  height: 2rem;
+  font-size: 1.6rem;
+  color: rgb(228, 43, 43);
+  font-family: Roboto;
+ 
+}
+.login-error > img {
+  height: 100%;
+  margin: 0 1rem 0 1rem;
+}
+

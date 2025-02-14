@@ -1,0 +1,12 @@
+.form-error {
+  display: flex;
+  justify-items: center;
+  height: 2rem;
+  font-size: 1.6rem;
+  color: rgb(228, 43, 43);
+  font-family: Roboto;
+}
+.form-error > img {
+  height: 100%;
+  margin: 0 1rem 0 1rem;
+}
