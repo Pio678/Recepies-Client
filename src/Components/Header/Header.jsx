@@ -12,6 +12,10 @@ function Header() {
 
   const navigate = useNavigate();
 
+  window.addEventListener("resize", () => {
+    setIsMenuOpen(false);
+  });
+
   function openMenu() {
     setIsMenuOpen(true);
   }
@@ -52,22 +56,25 @@ function Header() {
                 Desserts
               </a>
             </li>
+
+            <li className="nav-item">
+              <div className="user-section">
+                <img
+                  className="user-icon"
+                  onClick={() => navigate("/auth/log-in")}
+                  src={blankUserIcon}
+                />
+                <a
+                  className="login-button"
+                  onClick={() => navigate("/auth/log-in")}
+                >
+                  Log in
+                </a>
+              </div>
+            </li>
           </ul>
         </div>
       </nav>
-      <div className="user-section">
-        <img
-          className="user-icon"
-          onClick={() => navigate("/auth/log-in")}
-          src={blankUserIcon}
-        />
-        <button
-          className="login-button"
-          onClick={() => navigate("/auth/log-in")}
-        >
-          log in
-        </button>
-      </div>
     </header>
   );
 }

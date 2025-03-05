@@ -1,0 +1,78 @@
+.recepie-preview {
+  margin: 2rem;
+  aspect-ratio: 8/10;
+  max-width: 30rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(14, 1fr);
+  /* background-color: bisque; */
+  background-color: rgb(243, 223, 223);
+  overflow: hidden;
+  border-radius: 1.5rem;
+  transition: 0.3s;
+}
+
+.recepie-preview:hover {
+  box-shadow: 5px 8px 14px -9px rgba(61, 61, 68, 1);
+}
+
+.recepie-img-wrapper {
+  grid-area: 1 / 1 / span 9 / span 3;
+  overflow: hidden;
+  width: 100%;
+}
+
+.recepie-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.2s ease-out;
+}
+
+.recepie-preview:hover .recepie-img {
+  transform: scale(1.1);
+}
+
+.recepie-preview:hover .recepie-name {
+  font-size: 3.3;
+}
+
+.recepie-info-section {
+  grid-area: 10 / 1 / span 2 / span 3;
+  padding: 0rem 2.5rem;
+  background-color: var(--orange);
+  height: 100%;
+  display: flex;
+}
+
+.recepie-info {
+  display: flex;
+  align-items: center;
+
+  font-size: 140%;
+}
+
+.time-info {
+  justify-content: flex-start;
+}
+.dificulity-info {
+  justify-content: flex-end;
+}
+
+.recepie-info-icon {
+  padding-right: 1rem;
+  width: 30%;
+}
+
+.recepie-name {
+  padding: 1rem 2rem 0rem 2rem;
+  overflow: hidden;
+  height: 80%;
+  width: 100%;
+  grid-area: 12/1 / span 3 / span 3;
+  font-size: 2.1rem;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+}

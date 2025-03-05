@@ -1,67 +1,69 @@
-header {
-  height: 15rem;
-  width: 100%;
-  background-color: #e4dede;
-  display: grid;
-  grid-template-columns: 7rem 1fr 12rem;
-  grid-template-rows: 10rem;
-  grid-template-areas:
-    "menu-button logo-area login-area"
-    "menu menu menu";
-
-  align-items: center;
-  padding: 2rem;
-
-  transition: height 0.5s;
+:root {
+  --orange: #fd874c;
 }
 
-header.menu-open {
-  height: 100%;
-  align-content: start;
-
-  transition: height 0.5s;
+header {
+  position: sticky;
+  top: 0;
+  background-color: #e4dede;
+  display: grid;
+  width: clamp(250px, 100vw, 5000px);
+  grid-template-areas:
+    "menu-button logo-area"
+    "menu menu ";
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .logo-container {
   grid-area: logo-area;
   display: flex;
   align-items: center;
-  justify-self: flex-start;
   gap: 1rem;
   cursor: pointer;
+  align-content: center;
+  height: 100%;
 }
 
 .logo-img {
-  height: 7rem;
+  height: 5rem;
 }
 
 .logo-text {
   color: #35261d;
   white-space: nowrap;
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-family: "Pacifico", cursive;
 }
 
 nav {
   grid-area: menu;
-  align-content: center;
+
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serifs;
   font-weight: 700;
+  font-size: 2.5rem;
 }
 
 .menu-button {
   grid-area: menu-button;
   border: none;
   background-color: inherit;
-  height: 5rem;
+  height: 100%;
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;
 }
 
 .nav-menu {
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
   justify-content: center;
   height: 0;
+  opacity: 0;
 }
 
 .nav-menu.is-active {
@@ -69,11 +71,10 @@ nav {
   visibility: visible;
   justify-content: start;
   height: auto;
+  opacity: 1;
   transition: 0.5s;
 }
-.menu-button {
-  visibility: visible;
-}
+
 .menu-icon {
   height: 5rem;
 }
@@ -96,19 +97,20 @@ nav {
   transition: 0.2s ease-in-out;
 }
 
-.nav-item {
-  font-style: normal;
-  font-size: 2.4rem;
-}
-
-.nav-link {
+.nav-link,
+.login-button {
   text-decoration: none;
   color: black;
 }
 
-.nav-item > a:hover {
-  text-decoration: underline var(--orange);
+.nav-link:hover,
+.login-button:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 0.7rem;
 }
+
 .user-section {
   grid-area: login-area;
   justify-self: end;
@@ -128,31 +130,42 @@ nav {
 }
 header .login-button {
   border-style: none;
-  background-color: inherit;
-  font-weight: 700;
-  font-size: 1.5rem;
+
   cursor: pointer;
 }
-.login-button:hover {
-  text-decoration: underline var(--orange);
+
+@media (width<450px) {
+  .menu-icon {
+    height: clamp(2.5rem, 10vw, 5rem);
+  }
+  .logo-text {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+  }
+  .logo-img {
+    height: clamp(2.5rem, 10vw, 5rem);
+  }
+
+  .menu-button {
+    padding-right: clamp(0.5rem, 2vw, 2rem);
+  }
 }
 
-@media (width>60rem) {
+@media (width>1000px) {
   header,
   header.menu-open {
-    height: auto;
-    align-content: center;
-    grid-template-columns: 40rem 1fr 12rem;
+    padding: 2rem 4rem;
+    align-content: end;
+
+    grid-template-columns: 40rem 1fr;
     grid-template-areas:
-      "logo-area menu login-area"
-      "menu-button . .";
-    align-items: stretch;
+      "logo-area menu "
+      "menu-button . ";
   }
 
   .nav-menu {
-    justify-content: end;
+    align-self: end;
+    justify-self: end;
 
-    position: static;
     flex-direction: row;
   }
 
@@ -163,6 +176,7 @@ header .login-button {
 
   .nav-list,
   .nav-menu {
+    opacity: 1;
     justify-content: end;
     height: auto;
     position: static;

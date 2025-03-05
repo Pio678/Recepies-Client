@@ -6,7 +6,6 @@ import Logo from "../../assets/logoWhiteBackground.png";
 
 import "./AuthenticationPage.css";
 
-// import Logo from "../../Components/Logo/Logo";
 import { Button } from "bootstrap";
 import Header from "../../Components/Header/Header";
 
@@ -14,7 +13,10 @@ function LoginForm() {
   const navigate = useNavigate();
 
   return (
-    <div id="auth-page">
+    <div
+      id="auth-page"
+      // id={"AuthPage.auth-page"}
+    >
       <Header />
       <aside>
         <img className="side-img" src={sideImg} />

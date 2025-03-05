@@ -1,0 +1,11 @@
+main {
+  display: grid;
+  grid-template-columns:
+    "header"
+    "recepies";
+}
+
+header {
+  grid-area: "header";
+  margin-bottom: 2rem;
+}
