@@ -17,13 +17,10 @@ function LoginForm() {
       id="auth-page"
       // id={"AuthPage.auth-page"}
     >
-      <Header />
       <aside>
         <img className="side-img" src={sideImg} />
       </aside>
       <div className="login-container">
-        <img className="logo" src={Logo} />
-
         <Outlet />
       </div>
     </div>

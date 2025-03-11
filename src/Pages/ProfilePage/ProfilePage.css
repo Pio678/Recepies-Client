@@ -1,0 +1,14 @@
+#profile-page {
+  display: grid;
+  background-color: aqua;
+}
+
+#profile-page > h1,
+#profile-page > button {
+  justify-self: center;
+}
+#profile-page > button {
+  height: 10rem;
+  width: 40rem;
+  font-size: 6rem;
+}

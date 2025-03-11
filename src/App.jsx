@@ -11,6 +11,7 @@ import axios from "axios";
 
 import "./App.css";
 import { useEffect, useState } from "react";
+import ProfilePage from "./Pages/ProfilePage/ProfilePage";
 
 function App() {
   const [authState, setAuthState] = useState({
@@ -42,12 +43,14 @@ function App() {
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <BrowserRouter>
           <main>
+            <Header />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/auth" element={<AuthenticationPage />}>
                 <Route path="log-in" element={<LoginForm />} />
                 <Route path="sign-up" element={<SignUpForm />} />
               </Route>
+              <Route path="/profile" element={<ProfilePage />} />
             </Routes>
           </main>
         </BrowserRouter>

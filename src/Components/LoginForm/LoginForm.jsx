@@ -32,6 +32,8 @@ export default function LoginForm() {
           id: response.user_id,
           isUserLogged: true,
         });
+
+        navigate("../../profile");
       })
       .catch((err) => {
         setLoginError("Incorect login or password");

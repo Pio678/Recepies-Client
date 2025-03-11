@@ -4,11 +4,14 @@ import Logo from "../Logo/Logo";
 import blankUserIcon from "../../assets/icons/blankUserIcon.png";
 import closeMenuIcon from "../../assets/icons/cross-icon.png";
 import openMenuIcon from "../../assets/icons/hamburger.png";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../helpers/AuthContext";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { authState, setAuthState } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -31,6 +34,33 @@ function Header() {
       />
     </button>
   );
+
+  const logout = () => {
+    Cookies.remove("access-token");
+    navigate("/");
+
+    setAuthState({
+      username: "",
+      id: 0,
+      isUserLogged: false,
+    });
+  };
+
+  const LogInButton = () => {
+    return (
+      <a className="login-button" onClick={() => navigate("/auth/log-in")}>
+        Log in
+      </a>
+    );
+  };
+
+  const LogOutButton = () => {
+    return (
+      <a className="login-button" onClick={() => logout()}>
+        Log out
+      </a>
+    );
+  };
 
   return (
     <header className={isMenuOpen ? "menu-open" : ""}>
@@ -64,12 +94,11 @@ function Header() {
                   onClick={() => navigate("/auth/log-in")}
                   src={blankUserIcon}
                 />
-                <a
-                  className="login-button"
-                  onClick={() => navigate("/auth/log-in")}
-                >
-                  Log in
-                </a>
+                {authState.isUserLogged === true ? (
+                  <LogOutButton />
+                ) : (
+                  <LogInButton />
+                )}
               </div>
             </li>
           </ul>
