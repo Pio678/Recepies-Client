@@ -1,0 +1,170 @@
+:root {
+  --orange: #fd874c;
+  --beige: #ffecd1;
+  --brown: #2b0200;
+}
+
+.recepie-list-out-container {
+  margin: 1rem 0 1rem 0;
+}
+
+.ingredient-list-container,
+.instruction-list-container {
+  background-color: var(--beige);
+  border-radius: 2rem;
+  padding: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.form-list-name-container {
+  display: grid;
+  grid-template-columns: 1fr 17rem;
+  gap: 1rem;
+  align-items: center;
+}
+.form-list-name-container > h5 {
+  grid-column: 1/3;
+  font-size: 2rem;
+}
+
+.ingredient-list-form-button,
+.instruction-list-form-button {
+  border: none;
+  background-color: var(--brown);
+  color: white;
+  margin-left: 1rem;
+  padding: 0.7rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  transition: 4ms;
+}
+
+.ingredient-list-form-button:active,
+.instruction-list-form-button:active {
+  transform: scale(0.95);
+}
+
+.add-ingredient-button,
+.add-instruction-button {
+  border: none;
+  background: var(--brown);
+  color: white;
+  height: 4rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  width: 100%;
+  transition: 4ms;
+}
+
+.add-instruction-button:hover,
+.add-ingredient-button:hover {
+  cursor: pointer;
+}
+
+.add-instruction-button:active,
+.add-ingredient-button:active {
+  transform: scale(0.99, 0.96);
+}
+
+.ingredient-list-title-input,
+.instruction-list-title-input {
+  height: 4rem;
+  font-size: 2.2rem;
+  border: none;
+  border-radius: 1rem;
+  padding: 0 1rem 0 1rem;
+}
+
+.ingredient-input-row,
+.instruction-input-row {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+.ingredient-input-row {
+  grid-template-columns: 1fr 13rem 3rem;
+}
+
+.instruction-input-row {
+  grid-template-columns: 6.5rem 1fr 3rem;
+}
+
+.instruction-step-nr {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: auto;
+}
+
+.ingredient-field-label,
+.instruction-field-label {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+
+.ingredient-list,
+.instruction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ingredient-field,
+.instruction-field {
+  border: none;
+  border-radius: 1rem;
+  padding: 0 1rem 0 1rem;
+  height: 4rem;
+}
+
+.remove-ingredient-btn,
+.remove-instruction-btn {
+  background: transparent;
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  padding: 0rem;
+  margin: 0px;
+  transition: 2ms;
+}
+
+.remove-ingredient-btn:hover,
+.remove-instruction-btn:hover {
+  cursor: pointer;
+  color: var(--orange);
+}
+
+.remove-ingredient-btn:active,
+.remove-instruction-btn:active {
+  transform: scale(0.95);
+}
+
+.remove-list-btn {
+  border: none;
+  height: 4rem;
+  border-radius: 1rem;
+  background-color: red;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: roboto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 2ms;
+}
+
+.remove-list-btn:hover {
+  cursor: pointer;
+  transform: scale(1.01, 1.03);
+}
+.remove-list-btn:active {
+  transform: scale(0.95);
+}
+
+.remove-list-icon {
+  height: 80%;
+}
+.remove-ingredient-icon,
+.remove-instruction-icon {
+  height: 100%;
+}

@@ -33,7 +33,7 @@ export default function LoginForm() {
           isUserLogged: true,
         });
 
-        navigate("../../profile");
+        navigate("/");
       })
       .catch((err) => {
         setLoginError("Incorect login or password");

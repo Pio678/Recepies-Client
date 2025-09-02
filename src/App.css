@@ -3,6 +3,8 @@
 
 :root {
   --orange: #fd874c;
+  --beige: #ffecd1;
+  --brown: #2b0200;
 }
 
 * {
@@ -21,9 +23,11 @@ html {
 body {
   width: 100%;
   height: 100%;
+  background-color: var(--beige);
 }
 
 #root {
   height: 100%;
   width: 100%;
+  background-color: var(--beige);
 }

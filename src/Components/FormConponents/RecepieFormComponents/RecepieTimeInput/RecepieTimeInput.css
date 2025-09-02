@@ -1,0 +1,6 @@
+.recepie-time-input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: fit-content;
+  margin-bottom: 3rem;
+}

@@ -1,28 +1,12 @@
-import { useNavigate } from "react-router-dom";
-import Header from "../../Components/Header/Header";
-import "./ProfilePage.css";
-// import { AuthContext } from "../../helpers/AuthContext";
-// import { useContext } from "react";
+import profileImg from "../../assets/icons/blankUserIcon.png";
 
 const ProfilePage = () => {
-  const navigate = useNavigate();
-
-  // const { authState, useAuthState } = useContext(AuthContext);
-
   return (
-    <div id="profile-page">
-      <h1>ProfilePage</h1>
-      <button
-        onClick={() => {
-          navigate("../add-recepie");
-        }}
-      >
-        add recepie
-      </button>
-
-      {/* <div>{authState.username}</div>
-      <div> {authState.id}</div>
-      <div> {authState.isUserLogged ? "true" : "false"}</div> */}
+    <div className="profile_page">
+      <div>
+        <img src={profileImg} />
+        <p>Profile Name</p>
+      </div>
     </div>
   );
 };

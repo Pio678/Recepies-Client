@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import signUpSchema from "../../ValidationSchemas/signUpSchema";
 import FormError from "../FormConponents/FormError/FormError";
-import CustomInput from "../FormConponents/CustomInput/CustomInput";
+import CustomInput from "../FormConponents/AuthCustomInput/CustomInput";
 import axios from "axios";
 
 function SignUpForm() {

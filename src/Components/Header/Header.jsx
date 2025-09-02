@@ -46,19 +46,19 @@ function Header() {
     });
   };
 
-  const LogInButton = () => {
+  const UserSection = ({ navPath, text }) => {
     return (
-      <a className="login-button" onClick={() => navigate("/auth/log-in")}>
-        Log in
-      </a>
-    );
-  };
+      <div className="user-section">
+        <img
+          className="user-icon"
+          onClick={() => navigate(navPath)}
+          src={blankUserIcon}
+        />
 
-  const LogOutButton = () => {
-    return (
-      <a className="login-button" onClick={() => logout()}>
-        Log out
-      </a>
+        <a className="login-button" onClick={() => navigate(navPath)}>
+          {text}
+        </a>
+      </div>
     );
   };
 
@@ -88,18 +88,11 @@ function Header() {
             </li>
 
             <li className="nav-item">
-              <div className="user-section">
-                <img
-                  className="user-icon"
-                  onClick={() => navigate("/auth/log-in")}
-                  src={blankUserIcon}
-                />
-                {authState.isUserLogged === true ? (
-                  <LogOutButton />
-                ) : (
-                  <LogInButton />
-                )}
-              </div>
+              {authState.isUserLogged ? (
+                <UserSection text="Profile" navPath="/profile" />
+              ) : (
+                <UserSection text="Log In" navPath="/auth/log-in" />
+              )}
             </li>
           </ul>
         </div>

@@ -6,8 +6,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(14, 1fr);
-  /* background-color: bisque; */
-  background-color: rgb(243, 223, 223);
+
+  background-color: var(--orange);
   overflow: hidden;
   border-radius: 1.5rem;
   transition: 0.3s;
@@ -41,7 +41,8 @@
 .recepie-info-section {
   grid-area: 10 / 1 / span 2 / span 3;
   padding: 0rem 2.5rem;
-  background-color: var(--orange);
+  background-color: var(--brown);
+  color: white;
   height: 100%;
   display: flex;
 }

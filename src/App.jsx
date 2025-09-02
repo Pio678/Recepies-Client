@@ -12,6 +12,7 @@ import axios from "axios";
 import "./App.css";
 import { useEffect, useState } from "react";
 import ProfilePage from "./Pages/ProfilePage/ProfilePage";
+import RecepieForm from "./Components/RecepieForm/RecepieForm";
 
 function App() {
   const [authState, setAuthState] = useState({
@@ -46,11 +47,12 @@ function App() {
             <Header />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/profile" element={<ProfilePage />} />
               <Route path="/auth" element={<AuthenticationPage />}>
                 <Route path="log-in" element={<LoginForm />} />
                 <Route path="sign-up" element={<SignUpForm />} />
               </Route>
-              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/recepie/create" element={<RecepieForm />} />
             </Routes>
           </main>
         </BrowserRouter>

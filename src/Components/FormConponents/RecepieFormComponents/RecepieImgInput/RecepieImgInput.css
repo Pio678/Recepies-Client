@@ -1,0 +1,45 @@
+:root {
+  --brown: #2b0200;
+}
+
+.recepie-img-input-container {
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-self: center;
+}
+
+.recepie-img-input {
+  display: none;
+}
+
+.recepie-input-button {
+  aspect-ratio: 1/1;
+  border: dashed black;
+  padding: 4rem;
+  font-size: 1.7rem;
+  display: flex;
+  transition: all 0.2s;
+}
+
+.recepie-input-button > figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: inherit;
+  transition: all 0.2s;
+  font-weight: 600;
+}
+
+.recepie-input-button:hover {
+  background-color: #fea072;
+}
+
+.recepie-input-button:active {
+  scale: 0.98;
+}
+
+.camera-icon {
+  max-width: 15rem;
+  width: 100%;
+}
